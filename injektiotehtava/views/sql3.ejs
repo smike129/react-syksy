@@ -1,0 +1,38 @@
+<h1>SQL-injektiot, tehtävä 3</h1>
+
+<p>
+    Tämä tehtävä onkin jo haastavampi.
+    Tiedät, että sivuston toiminnasta kirjoitetaan lokimerkintöjä tapahtumat-nimiseen tauluun.
+    Haluat tyhjentää tämän taulun salataksesi, mitä olet tehnyt.
+    Käytössäsi on järjestelmän sisäisen viestijärjestelmän lähetyslomake.
+</p>
+
+<p>
+    Olet saanut selville, että viestin lisäämiseen tietokantaan käytettävä SQL-lause on:
+</p>
+<div style="background-color:lightgray;padding:10px;border:1px solid black;">
+INSERT INTO viestit (nimi, viesti) VALUES ('(nimi)', '(viesti)')</div>
+
+<p>
+    Sivu ilmoittaa, onnistuiko tyhjentäminen vai ei.
+    Jos et näe mitään viestiä, SQL-syntaksissasi on virhe, joka keskeyttää koodin suorituksen.
+</p>
+
+<p>
+    Vihje: Annettaessa useampi käsky jokainen päättyy puolipisteeseen (;). Ja -- tekee loppurivistä kommentin.
+</p>
+
+<form action="/sql3" method="post">
+    <p><label for="nimi">Nimi: </label><input type="text" name="nimi" id="nimi"></p>
+    <p><label for="viesti">Viesti:</label><br>
+    <textarea name="viesti" id="viesti" rows="5" cols="40"></textarea></p>
+    <input type="submit" value="Lähetä">
+</form>
+
+<% if (message) { %>
+    <p style="color: green"><%= message %></p>
+<% } %>
+
+<% if (error) { %>
+    <p style="color: red"><%= error %></p>
+<% } %>

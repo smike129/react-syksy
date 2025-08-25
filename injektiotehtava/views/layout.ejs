@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+    <title>Ohjelmistojen tietoturva: injektiot</title>
+</head>
+<body>
+    <div id="sailio">
+        <nav id="navi">
+            <ul>
+                <li><a href="/">Etusivu</a></li>
+                <li><a href="/xss1">Cross-site scripting, tehtävä 1</a></li>
+                <li><a href="/xss2">Cross-site scripting, tehtävä 2</a></li>
+                <li><a href="/sql1">SQL-injektiot, tehtävä 1</a></li>
+                <li><a href="/sql2">SQL-injektiot, tehtävä 2</a></li>
+                <li><a href="/sql3">SQL-injektiot, tehtävä 3</a></li>
+                <li><a href="/helper">Apusivu (tapahtumat)</a></li>
+            </ul>
+        </nav>
+        <main>
+            <%- body %>
+        </main>
+    </div>
+</body>
+</html>

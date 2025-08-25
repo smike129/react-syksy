@@ -1,0 +1,32 @@
+<h1>SQL-injektiot, tehtävä 1</h1>
+
+<p>
+    Näissä tehtävissä pyritään murtautumaan tietokantaan. Aloitetaan tiedustelulla.
+    Olet luonut palveluun käyttäjätunnuksen <em>hakkeri</em>. Sähköpostiosoitteesi on <em>hakkeri@hacknet.com</em>,
+    ja salasanasi <em>hack123</em>. Kirjauduttuasi näet omat tietosi (paitsi salasanan).
+    Hyödynnä kirjautumista selvittääksesi muiden käyttäjien käyttäjänimet.
+    Tavoitteesi on löytää ainakin yksi ylläpitäjätunnus.
+</p>
+
+<form action="/sql1" method="post">
+    <p><label for="tunnus" class="fixed-width">Käyttäjätunnus: </label><input type="text" name="tunnus" id="tunnus"></p>
+    <p><label for="salasana" class="fixed-width">Salasana: </label><input type="text" name="salasana" id="salasana"></p>
+    <input type="submit" value="Kirjaudu">
+</form>
+
+<p>Olet saanut selville, että kirjautumiseen käytettävä SQL-lause on:</p>
+<div style="background-color:lightgray;padding:10px;border:1px solid black;">
+    SELECT * FROM kayttajat WHERE tunnus = '(tunnus)' AND salasana = '(salasana)'</div>
+
+<% if (user && user.length > 0) { %>
+    <% user.forEach(function(userItem) { %>
+        <p>Tervetuloa, <%= userItem.tunnus %></p>
+        <p>Sähköpostiosoite: <%= userItem.sahkoposti %><br>
+        <p>Rooli: <%= userItem.yllapitaja == 0 ? "peruskäyttäjä" : "ylläpitäjä" %><br>
+        <hr>
+    <% }); %>
+<% } %>
+
+<% if (error) { %>
+    <p style="color: red"><%= error %></p>
+<% } %>

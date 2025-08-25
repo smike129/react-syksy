@@ -1,0 +1,41 @@
+<h1>Apusivu - Tapahtumat-taulun sisältö</h1>
+
+<p>
+    Tämä sivu näyttää kaikki tapahtumat-taulussa olevat lokimerkinnät.
+    Tämä on apusivu SQL-injektio tehtävien ratkaisemiseen.
+</p>
+
+<% if (error) { %>
+    <p style="color: red"><%= error %></p>
+<% } %>
+
+<% if (tapahtumat && tapahtumat.length > 0) { %>
+    <h2>Tapahtumat (<%= tapahtumat.length %> kpl)</h2>
+    <table border="1" style="border-collapse: collapse; width: 100%;">
+        <thead>
+            <tr style="background-color: #f0f0f0;">
+                <th style="padding: 8px; text-align: left;">ID</th>
+                <th style="padding: 8px; text-align: left;">Aikaleima</th>
+                <th style="padding: 8px; text-align: left;">Kuvaus</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% tapahtumat.forEach(function(tapahtuma) { %>
+                <tr>
+                    <td style="padding: 8px;"><%= tapahtuma.id %></td>
+                    <td style="padding: 8px;"><%= tapahtuma.aikaleima %></td>
+                    <td style="padding: 8px;"><%= tapahtuma.kuvaus %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+<% } else { %>
+    <p><em>Tapahtumat-taulussa ei ole yhtään merkintää.</em></p>
+<% } %>
+
+<p>
+    <strong>Vihje:</strong>
+    SQL-injektio tehtävässä 3 tavoitteesi on tyhjentää tämä taulu.
+    Voit tarkistaa tämän sivun sisältö ennen ja jälkeen yrityksesi nähdäksesi,
+    onnistuiko hyökkäyksesi.
+</p>

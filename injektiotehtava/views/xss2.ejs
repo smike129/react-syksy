@@ -1,0 +1,25 @@
+<h1>Cross-site scripting, tehtävä 2</h1>
+
+<p>Tässä tehtävässä tallennetaankin jo tietoa tietokantaan ja haetaan ne sivulle.
+Kyseessä on hyvin pienimuotoinen keskustelufoorumi.</p>
+
+<p>Tavoitteesi on lisätä keskustelufoorumiin pieni Javascript-pätkä, joka näyttää
+jokaiselle sivulla kävijälle ponnahdusikkunan (alert), jossa lukee "Hakkeroitu!".
+Ponnahdusikkunan pitäisi ilmestyä näkyviin sekä heti lomakkeen lähettämisen jälkeen
+että tullessasi sivulle uudestaan. (Älä paina selaimen päivitysnappia. Se lähettää lomakkeen uudestaan.)</p>
+
+<form action="/xss2" method="post">
+    <p><label for="nimi">Nimi: </label><input type="text" name="nimi" id="nimi"></p>
+    <p><label for="viesti">Viesti:</label><br>
+    <textarea name="viesti" id="viesti" rows="5" cols="40"></textarea></p>
+    <input type="submit" value="Lähetä">
+</form>
+
+<% if (error) { %>
+    <p style="color: red"><%= error %></p>
+<% } %>
+
+<% viestit.forEach(function(viesti) { %>
+    <p><b><%- viesti.nimi %></b><br>
+    <%- viesti.viesti %></p>
+<% }); %>

@@ -1,0 +1,16 @@
+<h1>Cross-site scripting, tehtävä 1</h1>
+
+<p>Tavoitteesi tässä tehtävässä on lisätä sivulle valitsemasi kuva hyödyntämällä
+vain alla olevaa nimikenttää.</p>
+
+<p>Vihje: kuvatägi on &lt;img&gt;.</p>
+
+<p>
+    <%- message %>
+</p>
+
+<form action="/xss1" method="post">
+    <label for="nimi">Kuka olet? </label>
+    <input type="text" name="nimi" id="nimi">
+    <input type="submit" value="Lähetä">
+</form>

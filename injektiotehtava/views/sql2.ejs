@@ -1,0 +1,22 @@
+<h1>SQL-injektiot, tehtävä 2</h1>
+
+<p>
+    Nyt kun tiedät ylläpitäjän tunnuksen, tavoitteesi on kirjautua kyseisellä tunnuksella.
+    Tämä antaa sinulle ylläpitäjän oikeudet järjestelmään.
+</p>
+
+<p>Jos kirjautuminen ylläpitäjänä onnistuu, näet viestin: Olet kirjautunut ylläpitäjänä.</p>
+
+<form action="/sql2" method="post">
+    <p><label for="tunnus" class="fixed-width">Käyttäjätunnus: </label><input type="text" name="tunnus" id="tunnus"></p>
+    <p><label for="salasana" class="fixed-width">Salasana: </label><input type="text" name="salasana" id="salasana"></p>
+    <input type="submit" value="Kirjaudu">
+</form>
+
+<% if (message) { %>
+    <p><%= message %></p>
+<% } %>
+
+<% if (error) { %>
+    <p style="color: red"><%= error %></p>
+<% } %>
