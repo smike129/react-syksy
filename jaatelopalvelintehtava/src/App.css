@@ -1,0 +1,39 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  font-family: "Segoe UI", "Arial", sans-serif;
+  background: #e3f2fd;
+  min-height: 100vh;
+  color: #222;
+}
+
+body {
+  background: #e3f2fd;
+  color: #222;
+}
+
+input,
+button,
+label,
+h2,
+h1,
+h3,
+h4,
+h5,
+h6 {
+  color: #222;
+}
+
+input::placeholder {
+  color: #555;
+  opacity: 1;
+}
+
+.hakuInput::placeholder {
+  color: #2d3a4a;
+  font-size: 1.1em;
+  font-weight: 600;
+  opacity: 1;
+}

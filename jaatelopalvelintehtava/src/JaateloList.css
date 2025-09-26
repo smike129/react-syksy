@@ -1,0 +1,58 @@
+.listContainer {
+  max-width: 600px;
+  margin: 2em auto;
+  padding: 0;
+  list-style: none;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  color: #222;
+}
+
+.listContainer li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em 1.5em;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background 0.2s;
+  color: #222;
+}
+
+.listContainer li:last-child {
+  border-bottom: none;
+}
+
+.listContainer li:hover {
+  background: #f1f8fe;
+}
+
+.kuva {
+  max-width: 60px;
+  margin-left: 1em;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.listContainer button {
+  background: #4fc3f7;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5em 1em;
+  font-size: 1em;
+  font-weight: 600;
+  margin-left: 0.5em;
+  cursor: pointer;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(79, 195, 247, 0.08);
+}
+
+.listContainer button:hover {
+  background: #0288d1;
+}
+
+.listContainer h2 {
+  color: #2d3a4a;
+}

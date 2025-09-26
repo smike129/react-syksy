@@ -1,0 +1,81 @@
+.formContainer {
+  max-width: 400px;
+  margin: 2em auto;
+  padding: 2em;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+  color: #222;
+}
+
+.formContainer h2 {
+  margin-bottom: 0.5em;
+  color: #2d3a4a;
+  font-size: 1.5em;
+}
+
+.formContainer label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  color: #222;
+  gap: 0.3em;
+}
+
+.formContainer input[type="text"],
+.formContainer input[type="number"],
+.formContainer input[type="file"] {
+  padding: 0.5em;
+  border: 1px solid #cfd8dc;
+  border-radius: 8px;
+  font-size: 1em;
+  background: #f7fafc;
+  margin-top: 0.2em;
+  color: #222;
+}
+
+.formContainer input::placeholder {
+  color: #555;
+  opacity: 1;
+}
+
+.formContainer input[type="file"] {
+  background: none;
+}
+
+.formContainer button {
+  background: #4fc3f7;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7em 1.5em;
+  font-size: 1em;
+  font-weight: 600;
+  margin-right: 0.5em;
+  cursor: pointer;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(79, 195, 247, 0.08);
+}
+
+.formContainer button:hover {
+  background: #0288d1;
+}
+
+.virhe {
+  color: #fff;
+  background: #e57373;
+  padding: 0.7em 1em;
+  border-radius: 8px;
+  margin-bottom: 1em;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(229, 115, 115, 0.08);
+}
+
+.formContainer img {
+  margin-top: 0.5em;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
